@@ -1,0 +1,40 @@
+Given an array Arr of size N, print second largest distinct element from an array.
+LINK :- https://practice.geeksforgeeks.org/problems/second-largest3735/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=second-largest
+
+class Solution{
+public:	
+
+// 	int print2largest(int arr[], int n) {
+// 	    // code here
+// 	    int max=-1;
+// 	    int pre=-1;
+// 	    for(int i=0;i<n;i++){
+	        
+// 	        if(arr[i]>arr[max]){
+// 	            pre=max;
+// 	            max=i;
+// 	        }
+// 	        else if(arr[pre]<arr[i] && arr[i]<arr[max]){
+// 	            pre=i;
+// 	        }
+// 	       // else return -1;
+// 	    }
+// 	    return arr[pre];
+// 	}
+	    
+	    int print2largest(int arr[], int n) {
+	    int first =-1;
+	    for(int i=0;i<n;i++){
+	        if(arr[i]>first){
+	            first=arr[i];
+	        }
+	    }
+	    int second =-1;
+	    for(int i=0;i<n;i++){
+	        if(arr[i]>second &&arr[i]!=first){ // only coz here != is used, this code is running 
+	            second=arr[i];
+	        }
+	    }
+	    return second;
+	}
+};
